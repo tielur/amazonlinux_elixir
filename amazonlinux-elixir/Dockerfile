@@ -1,8 +1,8 @@
 #FROM amazonlinux:2016.09.1.20161221-with-sources
 FROM amazonlinux:2016.09.1.20161221
 
-ARG ERLANG_VER="19.3"
-ARG ELIXIR_VER="1.4.2"
+ARG ERLANG_VER="20.3"
+ARG ELIXIR_VER="1.6.5"
 
 # Install dependencies
 RUN yum install -y gcc glibc-devel ncurses-devel openssl-devel autoconf wget unzip findutils && yum clean all
