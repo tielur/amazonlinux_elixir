@@ -22,5 +22,9 @@ RUN wget https://github.com/elixir-lang/elixir/releases/download/v$ELIXIR_VER/Pr
     && export PATH=$ERLANG_DIR/bin:$ELIXIR_DIR/bin:$PATH \
     && mix local.hex --force && mix local.rebar --force
 
+# Install node
+RUN curl --silent --location https://raw.githubusercontent.com/nodesource/distributions/master/rpm/setup_7.x | bash -
+RUN yum -y install nodejs
+
 ENV PATH=/opt/erlang/bin:/opt/elixir/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
