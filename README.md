@@ -1,2 +1,2 @@
-# dockerfiles
+# amazonlinux_elixir
 Dockerfile
