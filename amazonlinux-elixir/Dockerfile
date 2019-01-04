@@ -5,7 +5,7 @@ ARG ERLANG_VER="20.3"
 ARG ELIXIR_VER="1.6.5"
 
 # Install dependencies
-RUN yum install -y gcc glibc-devel ncurses-devel openssl-devel autoconf wget unzip findutils && yum clean all
+RUN yum install -y gcc gcc-c++ glibc-devel ncurses-devel openssl-devel autoconf wget unzip findutils && yum clean all
 
 ENV ERLANG_DIR=/opt/erlang \
     ELIXIR_DIR=/opt/elixir
@@ -23,7 +23,7 @@ RUN wget https://github.com/elixir-lang/elixir/releases/download/v$ELIXIR_VER/Pr
     && mix local.hex --force && mix local.rebar --force
 
 # Install node
-RUN curl --silent --location https://raw.githubusercontent.com/nodesource/distributions/master/rpm/setup_7.x | bash -
+RUN curl --silent --location https://raw.githubusercontent.com/nodesource/distributions/master/rpm/setup_8.x | bash -
 RUN yum -y install nodejs
 
 ENV PATH=/opt/erlang/bin:/opt/elixir/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
