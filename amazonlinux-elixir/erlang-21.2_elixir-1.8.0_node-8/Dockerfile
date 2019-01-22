@@ -1,9 +1,9 @@
-#FROM amazonlinux:2016.09.1.20161221-with-sources
-FROM amazonlinux:2016.09.1.20161221
+FROM amazonlinux:2018.03.0.20190118
 
 ARG ERLANG_VER="21.2"
 ARG ELIXIR_VER="1.8.0"
 
+# Set locale to en_US.UTF-8
 RUN localedef -c -f UTF-8 -i en_US en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 

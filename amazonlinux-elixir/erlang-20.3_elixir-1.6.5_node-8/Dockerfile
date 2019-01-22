@@ -1,4 +1,3 @@
-#FROM amazonlinux:2016.09.1.20161221-with-sources
 FROM amazonlinux:2016.09.1.20161221
 
 ARG ERLANG_VER="20.3"
