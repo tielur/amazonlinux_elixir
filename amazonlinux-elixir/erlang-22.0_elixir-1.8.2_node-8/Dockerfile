@@ -1,14 +1,14 @@
 FROM amazonlinux:2018.03.0.20190118
 
-ARG ERLANG_VER="21.2"
-ARG ELIXIR_VER="1.8.0"
+ARG ERLANG_VER="22.0"
+ARG ELIXIR_VER="1.8.2"
 
 # Set locale to en_US.UTF-8
 RUN localedef -c -f UTF-8 -i en_US en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 # Install dependencies
-RUN yum install -y gcc gcc-c++ glibc-devel ncurses-devel openssl-devel autoconf wget unzip findutils && yum clean all
+RUN yum install -y gcc gcc-c++ glibc-devel ncurses-devel openssl-devel autoconf wget unzip findutils git ImageMagick && yum clean all
 
 ENV ERLANG_DIR=/opt/erlang \
     ELIXIR_DIR=/opt/elixir

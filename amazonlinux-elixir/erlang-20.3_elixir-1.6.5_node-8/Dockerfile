@@ -3,6 +3,7 @@ FROM amazonlinux:2016.09.1.20161221
 ARG ERLANG_VER="20.3"
 ARG ELIXIR_VER="1.6.5"
 
+# Set locale to en_US.UTF-8
 RUN localedef -c -f UTF-8 -i en_US en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
